@@ -21,7 +21,6 @@ export default function HomePage() {
 
   return (
     <>
-      <h1 className="bg-blue-400">Home Page</h1>
       <HomeSection />
       <AboutmeSection />
       <OfferSection />
