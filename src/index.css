@@ -1,7 +1,30 @@
 @import "tailwindcss";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@theme {
+  --color-custom-blue: #0d99ff;
+  --color-custom-darkBlue: #0066b7;
+  --color-custom-dark: #3b3d40;
+  --color-custom-light: #f5f7f8;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-padding: 90px;
+  }
+}
+
+@layer components {
+  .wrapper {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1300px;
+  }
 }
