@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import AboutmeSection from "../components/AboutmeSection";
-import ContactSection from "../components/ContactSection";
-import HomeSection from "../components/HomeSection";
-import OfferSection from "../components/OfferSection";
-import RealisationSection from "../components/RealisationSection";
+import AboutmeSection from "../components/sections/AboutmeSection";
+import ContactSection from "../components/sections/ContactSection";
+import HomeSection from "../components/sections/HomeSection";
+import OfferSection from "../components/sections/OfferSection";
+import RealisationSection from "../components/sections/RealisationSection";
 
 export default function HomePage() {
   const { hash } = useLocation();
