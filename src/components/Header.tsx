@@ -46,7 +46,7 @@ export default function Header() {
       <nav
         className={`fixed flex top-0 z-20 h-22.5 items-center w-full text-2xl transition-colors duration-300 ${scrolled ? "bg-black/80 backdrop-blur-md" : "bg-transparent"} text-white`}
       >
-        <div className="wrapper flex items-center justify-end sm:relative">
+        <div className="wrapper flex items-center justify-end md:relative">
           <button
             onClick={() => handleClick(LOGO_NAV_ITEM.id)}
             className="absolute left-0 ml-[1em] p-3 font-semibold hover:text-custom-blue transition-colors duration-200"
