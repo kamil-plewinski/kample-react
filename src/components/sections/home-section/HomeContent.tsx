@@ -10,7 +10,12 @@ export default function HomeContent() {
       <p className="subtitle px-[.5em] text-xl font-light drop-shadow-lg xl:text-2xl">
         Funkcjonalne, wydajne, responsywne
       </p>
-      <CtaButton ctaButtonText={"Bezpłatna wycena"} />
+      <CtaButton
+        className="animate-custom-pulse absolute right-0 mt-[7em] mr-[2em] sm:mr-[5em] xl:mr-[20em]"
+        variant="dark"
+      >
+        Bezpłatna wycena
+      </CtaButton>
     </div>
   );
 }
