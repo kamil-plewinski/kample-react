@@ -1,19 +1,33 @@
-import { Link } from "react-router-dom";
+import classNames from "classnames";
 
 type ButtonProps = {
-  ctaButtonText: string;
+  children: React.ReactNode;
+  className?: string;
+  variant: "dark" | "light";
 };
 
-export default function CtaButton({ ctaButtonText }: ButtonProps) {
+export default function CtaButton({
+  children,
+  className,
+  variant,
+}: ButtonProps) {
+  const classes = classNames(
+    `cta-btn rounded-[50px]  px-[1.5em] py-[.75em] font-semibold text-lg text-white uppercase xl:text-xl ${className}`,
+    {
+      "bg-custom-darkBlue hover:bg-custom-blue": variant === "dark",
+      "bg-custom-blue hover:bg-custom-darkBlue": variant === "light",
+    },
+  );
+
+  const handleScroll = () => {
+    const contactSection = document.getElementById("contact");
+
+    contactSection?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <button className="cta-btn animate-custom-pulse absolute right-0 mt-[8em] mr-[2em] bg-custom-darkBlue rounded-[50px] hover:bg-custom-blue sm:mr-[5em] xl:mr-[20em]">
-      <Link
-        to="#contact"
-        aria-label="Zamów bezpłatną wycenę"
-        className="cta-text inline-block px-[1.5em] py-[.75em] font-semibold text-lg text-white uppercase xl:text-xl"
-      >
-        {ctaButtonText}
-      </Link>
+    <button onClick={handleScroll} className={classes}>
+      {children}
     </button>
   );
 }
