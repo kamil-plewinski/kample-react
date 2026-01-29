@@ -1,6 +1,10 @@
 import CtaButton from "../../CtaButton";
+import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
 
 export default function AboutmeContent() {
+  const { isImageVisible, isTextVisible, imageRef, textRef } =
+    useIntersectionObserver();
+
   return (
     <div className="flex flex-col lg:flex-row lg:justify-center lg:py-[5em] lg:gap-20 xl:gap-40">
       <picture ref={imageRef} className="px-[.5em] z-10">
