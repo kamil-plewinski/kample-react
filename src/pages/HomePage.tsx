@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import AboutmeSection from "../components/sections/AboutmeSection";
+import AboutmeSection from "../components/sections/aboutme-section/AboutmeSection";
 import ContactSection from "../components/sections/ContactSection";
 import HomeSection from "../components/sections/home-section/HomeSection";
 import OfferSection from "../components/sections/OfferSection";

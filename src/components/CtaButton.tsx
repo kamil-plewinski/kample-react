@@ -12,7 +12,7 @@ export default function CtaButton({
   variant,
 }: ButtonProps) {
   const classes = classNames(
-    `cta-btn rounded-[50px]  px-[1.5em] py-[.75em] font-semibold text-lg text-white uppercase xl:text-xl ${className}`,
+    `cta-btn rounded-[50px]  px-[1.5em] py-[.75em] font-semibold text-lg text-white uppercase tracking-wide xl:text-xl ${className}`,
     {
       "bg-custom-darkBlue hover:bg-custom-blue": variant === "dark",
       "bg-custom-blue hover:bg-custom-darkBlue": variant === "light",
