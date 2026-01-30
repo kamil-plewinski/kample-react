@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const NAV_ITEMS = [
   { label: "O mnie", id: "aboutme" },
-  { label: "Oferta", id: "ofert" },
+  { label: "Oferta", id: "offer" },
   { label: "Realizacje", id: "realisation" },
   { label: "Kontakt", id: "contact" },
 ];
