@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import AboutmeSection from "../components/sections/aboutme-section/AboutmeSection";
 import ContactSection from "../components/sections/ContactSection";
 import HomeSection from "../components/sections/home-section/HomeSection";
-import OfferSection from "../components/sections/OfferSection";
+import OfferSection from "../components/sections/offer-section/OfferSection";
 import RealisationSection from "../components/sections/RealisationSection";
 
 export default function HomePage() {

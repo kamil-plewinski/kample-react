@@ -1,10 +1,10 @@
 import classNames from "classnames";
 
-type ButtonProps = {
+interface ButtonProps {
   children: React.ReactNode;
   className?: string;
   variant: "dark" | "light";
-};
+}
 
 export default function CtaButton({
   children,
