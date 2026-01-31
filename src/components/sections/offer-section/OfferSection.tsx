@@ -1,10 +1,4 @@
-import OfferSectionItem from "./OfferSectionItem";
-import SpeedIcon from "../../icons/SpeedIcon";
-import MobileCheckIcon from "../../icons/MobileCheckIcon";
-import ShieldCheckIcon from "../../icons/ShieldCheckIcon";
-import TrendingUpIcon from "../../icons/TrendingUpIcon";
-import FileIcon from "../../icons/FileIcon";
-import WorldWwwIcon from "../../icons/WorldWwwIcon";
+import OfferSectionItems from "./OfferSectionItems";
 
 export default function OfferSection() {
   return (
@@ -29,36 +23,7 @@ export default function OfferSection() {
           .
         </p>
         <div className="mx-[1em] mt-[6em] mb-[3em] flex flex-col gap-20 justify-center items-center lg:flex-row lg:flex-wrap lg:items-start lg:gap-32">
-          <OfferSectionItem
-            offerTitle="Szybkość"
-            offerText="Twoi urzytkownicy mogą szybko uzyskać dostęp do informacji, których potrzebują."
-            offerIcon={<SpeedIcon />}
-          />
-          <OfferSectionItem
-            offerTitle="Responsywność"
-            offerText="Strony są dopasowane do ekranów wszystkich urządzeń. Wyglądają świetnie zarówno na ekranie komputera jak i telefonu."
-            offerIcon={<MobileCheckIcon />}
-          />
-          <OfferSectionItem
-            offerTitle="Bezpieczeństwo"
-            offerText="Strony posiadają certyfikat bezpieczeństwa SSL."
-            offerIcon={<ShieldCheckIcon />}
-          />
-          <OfferSectionItem
-            offerTitle="Optymalizacja SEO"
-            offerText="Optymalizacja strony pod kątem SEO zwiększa jej widoczność w wyszukiwarkach."
-            offerIcon={<TrendingUpIcon />}
-          />
-          <OfferSectionItem
-            offerTitle="Projekt Graficzny"
-            offerText="Dla każdego klienta przygotowuję projekt graficzny strony internetowej."
-            offerIcon={<FileIcon />}
-          />
-          <OfferSectionItem
-            offerTitle="Hosting i domena"
-            offerText="Pomagam przy wyborze odpowiedniej domeny oraz hostingu."
-            offerIcon={<WorldWwwIcon />}
-          />
+          <OfferSectionItems />
         </div>
       </div>
     </section>
