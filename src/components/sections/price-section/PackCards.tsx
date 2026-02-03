@@ -1,4 +1,5 @@
 import CtaButton from "../../CtaButton";
+import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
 
 type CardVariant = "small" | "big";
 
@@ -102,24 +103,34 @@ export default function PackCards() {
     },
   ];
 
+  const { cardRef, isCardVisible } = useIntersectionObserver();
+
   const baseClasses =
-    "relative  px-[2em] mb-[5em] text-md text-center bg-white border-4 border-custom-darkBlue rounded-lg shadow-[0_0px_10px_rgba(13,153,255,0.75)] overflow-hidden opacity-100 scale-100 translate-y-0 transition-all duration-[.75s] xl:mb-0 xl:px-[3em]";
+    "relative  px-[2em] mb-[5em] text-md text-center bg-white border-4 border-custom-darkBlue rounded-lg shadow-[0_0px_10px_rgba(13,153,255,0.75)] overflow-hidden opacity-100 scale-100 transition-all duration-[.75s] xl:mb-0 xl:px-[3em] xl:opacity-0 xl:scale-50";
 
   const topBadge = (
-    <div className="pack-icon absolute left-27.5 top-6 w-full py-[.5em] bg-custom-blue -rotate-45 xl:-left-35 xl:top-8 z-[-1]">
+    <div className="pack-icon absolute -left-27.5 top-6 w-full py-[.5em] bg-custom-blue -rotate-45 xl:-left-35 xl:top-8 z-[-1]">
       <p className="text-white text-md font-bold uppercase tracking-[.5rem]">
         Top
       </p>
     </div>
   );
-  const renderedCards = cards.map((card) => {
+
+  const renderedCards = cards.map((card, index) => {
     const sizeClasses =
       card.variant === "small"
         ? "sm:h-[570px] xl:w-[380px]"
         : "sm:h-[600px] xl:w-[400px]";
 
+    const animationDelay = index * 200;
+
     return (
-      <div key={card.cardTitle} className={`${baseClasses} ${sizeClasses}`}>
+      <div
+        key={card.cardTitle}
+        ref={cardRef}
+        style={{ transitionDelay: `${animationDelay}ms` }}
+        className={`${baseClasses} ${sizeClasses} ${isCardVisible ? "xl:opacity-100 xl:scale-100" : "xl:opacity-0 xl:scale-50"}`}
+      >
         {card.variant === "big" && topBadge}
         <p className="pack-title mt-[1em] text-2xl font-bold uppercase">
           {card.cardTitle}
@@ -146,7 +157,3 @@ export default function PackCards() {
 
   return <>{renderedCards}</>;
 }
-
-//Do animacji ma być opacity-0 zamiast opacity-100
-// scale-50 zamiast scale-100
-// translate-y-8 zamiast translate-y-0
