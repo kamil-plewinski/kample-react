@@ -5,6 +5,7 @@ import ContactSection from "../components/sections/ContactSection";
 import HomeSection from "../components/sections/home-section/HomeSection";
 import OfferSection from "../components/sections/offer-section/OfferSection";
 import RealisationSection from "../components/sections/RealisationSection";
+import PriceSection from "../components/sections/price-section/PriceSection";
 
 export default function HomePage() {
   const { hash } = useLocation();
@@ -24,6 +25,7 @@ export default function HomePage() {
       <HomeSection />
       <AboutmeSection />
       <OfferSection />
+      <PriceSection />
       <RealisationSection />
       <ContactSection />
     </>

@@ -3,13 +3,16 @@ import { useEffect, useRef, useState } from "react";
 export default function useIntersectionObserver() {
   const [isImageVisible, setIsImageVisible] = useState<boolean>(false);
   const [isTextVisible, setIsTextVisible] = useState<boolean>(false);
+  const [isCardVisible, setIsCardVisible] = useState<boolean>(false);
 
   const imageRef = useRef<HTMLElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const currentImageElement = imageRef.current;
     const currentTextElement = textRef.current;
+    const currentCardElement = cardRef.current;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -17,6 +20,7 @@ export default function useIntersectionObserver() {
           if (entry.isIntersecting) {
             if (entry.target === currentImageElement) setIsImageVisible(true);
             if (entry.target === currentTextElement) setIsTextVisible(true);
+            if (entry.target === currentCardElement) setIsCardVisible(true);
           }
         });
       },
@@ -29,18 +33,30 @@ export default function useIntersectionObserver() {
     if (currentTextElement) {
       observer.observe(currentTextElement as Element);
     }
+    if (currentCardElement) {
+      observer.observe(currentCardElement as Element);
+    }
 
     return () => {
-      if (currentImageElement)
+      if (currentImageElement) {
         observer.unobserve(currentImageElement as Element);
-      if (currentTextElement) observer.unobserve(currentTextElement as Element);
+      }
+
+      if (currentTextElement) {
+        observer.unobserve(currentTextElement as Element);
+      }
+      if (currentCardElement) {
+        observer.unobserve(currentCardElement as Element);
+      }
     };
   }, []);
 
   return {
     isImageVisible,
     isTextVisible,
+    isCardVisible,
     imageRef,
     textRef,
+    cardRef,
   };
 }
