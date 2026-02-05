@@ -4,7 +4,7 @@ import AboutmeSection from "../components/sections/aboutme-section/AboutmeSectio
 import ContactSection from "../components/sections/ContactSection";
 import HomeSection from "../components/sections/home-section/HomeSection";
 import OfferSection from "../components/sections/offer-section/OfferSection";
-import RealisationSection from "../components/sections/RealisationSection";
+import RealisationSection from "../components/sections/realisation-section/RealisationSection";
 import PriceSection from "../components/sections/price-section/PriceSection";
 
 export default function HomePage() {

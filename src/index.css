@@ -38,6 +38,19 @@
   .decor-icon {
     width: 350px;
   }
+  .realisation-title {
+    font-size: 1.25rem;
+  }
+  .realisation-subtitle {
+    font-size: 1rem;
+    margin-top: 1em;
+  }
+  .realisation-icon-first {
+    width: 150px;
+  }
+  .realisation-icon-second {
+    width: 125px;
+  }
 }
 
 @layer components {
@@ -48,7 +61,6 @@
   }
   .cta-btn {
     box-shadow: 0 0 0 0;
-    /* animation: pulse 2s infinite ease-out; */
     transition: all 0.3s;
   }
 
