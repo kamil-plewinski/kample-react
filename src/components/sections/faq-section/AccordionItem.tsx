@@ -20,7 +20,7 @@ export default function AccordionItem({
       <div className="accordion-question flex justify-between items-center transition-colors duration-300">
         <h3
           onClick={handleClick}
-          className="text-lg font-semibold w-[85%] cursor-pointer"
+          className={`text-lg font-semibold w-[85%] cursor-pointer transition-colors duration-300 ${isOpen ? "text-custom-darkBlue" : ""}`}
         >
           {accordionQuestion}
         </h3>
@@ -38,7 +38,7 @@ export default function AccordionItem({
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="accordion-icon transition-transform duration-300 ease-in"
+            className={`accordion-icon transition-all duration-300 ease-in ${isOpen ? "text-custom-darkBlue rotate-180" : ""}`}
           >
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M6 9l6 6l6 -6" />
@@ -46,9 +46,10 @@ export default function AccordionItem({
         </button>
       </div>
       <div
-        className={`accordion-answer overflow-hidden transition-all duration-500 ease-in-out bg-custom-light ${isOpen ? "max-h-112.5" : "max-h-0"}`}
+        onClick={handleClick}
+        className={`accordion-answer overflow-hidden transition-all duration-500 ease-in-out bg-custom-light ${isOpen ? "max-h-112.5 animate-custom-fade" : "max-h-0"}`}
       >
-        <p className="p-[1em]">{accordionAnswer}</p>
+        <p className="p-[1em] ">{accordionAnswer}</p>
       </div>
     </div>
   );
