@@ -7,6 +7,7 @@
   --color-custom-dark: #3b3d40;
   --color-custom-light: #f5f7f8;
   --animate-custom-pulse: custom-pulse 2s ease-out infinite;
+  --animate-custom-fade: custom-fade 0.5s ease-in-out;
 }
 
 @layer base {
@@ -71,6 +72,16 @@
 
     100% {
       box-shadow: 0 0 0 5px rgba(13, 153, 255, 0);
+    }
+  }
+  @keyframes custom-fade {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }
