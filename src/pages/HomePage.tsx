@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import AboutmeSection from "../components/sections/aboutme-section/AboutmeSection";
@@ -23,6 +24,33 @@ export default function HomePage() {
 
   return (
     <>
+      <Helmet>
+        <title>KamPle - Profesjonalne strony internetowe</title>
+        <link rel="canonical" href="https://kample.pl/"/>
+        <meta
+          name="description"
+          content="Szukasz profesjonalnej strony internetowej? Stworzę dla Ciebie nowoczesną witrynę, która przyciągnie nowych klientów i wyróżni Cię na rynku."
+        />
+        <meta
+          name="google-site-verification"
+          content="TLEisAYJalGtQDShTOHctm8FkGXdEST-kMjaE3FU5rI"
+        />
+        <meta
+          property="og:title"
+          content="KamPle - Profesjonalne strony internetowe"
+        />
+        <meta
+          property="og:description"
+          content="Szukasz profesjonalnej strony internetowej? Stworzę dla Ciebie nowoczesną witrynę, która przyciągnie nowych klientów i wyróżni Cię na rynku."
+        />
+        <meta
+          property="og:image"
+          content="https://kample.pl/img/opengraph-photo.png"
+        />
+        <meta property="og:url" content="https://kample.pl" />
+        <meta property="og:type" content="website" />
+        
+      </Helmet>
       <HomeSection />
       <AboutmeSection />
       <OfferSection />
