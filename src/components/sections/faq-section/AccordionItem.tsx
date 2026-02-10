@@ -28,6 +28,11 @@ export default function AccordionItem({
           className="cursor-pointer"
           onClick={handleClick}
           aria-expanded={isOpen}
+          aria-label={
+            isOpen
+              ? "Zamknij pole z odpowiedzią na pytanie"
+              : "Otwórz pole z odpowiedzią na pytanie"
+          }
         >
           <svg
             width="40"
