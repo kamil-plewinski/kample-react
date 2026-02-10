@@ -41,10 +41,22 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMenuShow) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuShow]);
+
   return (
     <header>
       <nav
-        className={`fixed flex top-0 z-20 h-22.5 items-center w-full text-2xl transition-colors duration-300 ${scrolled ? "bg-black/80 backdrop-blur-md" : "bg-transparent"} text-white`}
+        className={`fixed flex top-0 z-20 h-22.5 items-center w-full  text-2xl transition-colors duration-300 text-white  ${scrolled ? "bg-black/80 " : "bg-transparent"} ${scrolled && !isMenuShow ? "backdrop-blur-md" : ""} `}
       >
         <div className="wrapper flex items-center justify-end md:relative">
           <button
@@ -54,7 +66,7 @@ export default function Header() {
             Kam<span className="text-custom-blue">Ple</span>
           </button>
           <ul
-            className={`nav-items flex flex-col items-center justify-center absolute top-0 bg-[rgba(15,21,29,0.8)] backdrop-blur-[7px] w-full h-screen text-3xl transition-all duration-1000 z-10 md:flex md:flex-row md:h-0 md:w-auto md:relative md:translate-x-0 md:my-5 md:text-xl lg:text-2xl ${isMenuShow ? "translate-x-0" : "translate-x-full"}`}
+            className={`nav-items flex flex-col items-center justify-center absolute top-0 bg-[rgba(15,21,29,0.8)] backdrop-blur-[7px] w-full h-screen text-3xl transition-transform duration-1000 z-10 md:flex md:flex-row md:h-0 md:w-auto md:relative md:translate-x-0 md:my-5 md:text-xl lg:text-2xl ${isMenuShow ? "translate-x-0" : "translate-x-full"}`}
           >
             {NAV_ITEMS.map((item) => (
               <li key={item.id}>
