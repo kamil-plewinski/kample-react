@@ -1,12 +1,14 @@
 # Kample React
+React application built with Vite, TypeScript and Tailwind CSS.
 
-React application built with Vite, TypeScript and Redux Toolkit.
+**Live site:** [https://kample.pl](https://kample.pl)
+
 
 ## Tech stack
 - React
 - TypeScript
+- Tailwind CSS
 - Vite
-- Redux Toolkit
 
 ## Getting started
 ```bash
